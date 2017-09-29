@@ -1,0 +1,31 @@
+body {
+    background: #000;
+}
+
+.container{
+    background: #fff;
+}
+
+.result-board .minimum h1 {
+    font-weight:bolder;
+    color: #a94442;
+}
+
+.result-board .average h1 {
+    font-weight:bolder;
+    color: #31708f;
+}
+
+.result-board .maximum h1 {
+    font-weight:bolder;
+    color: #3c763d;
+}
+
+.edit>img{
+    cursor: pointer;    
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}

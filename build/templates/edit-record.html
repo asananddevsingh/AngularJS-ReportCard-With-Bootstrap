@@ -1,0 +1,18 @@
+<td class="sno" ng-model="result.id">
+    {{result.id}}
+</td>
+<td class="avatar">
+    <img src="./assets/img/avatar-48.png" alt="Avatar">
+</td>
+<td class="name">
+    <input type="text" placeholder="Student's name" value="{{result.name}}" ng-model="result.name" ng-blur="saveEditedResult(result)"/>
+</td>
+<td class="marks">
+    <input type="number" placeholder="marks" value="{{result.marks}}" ng-model="result.marks" ng-blur="saveEditedResult(result)">
+</td>
+<td class="status">
+    <img src="./assets/img/circle-grey.png" alt="Status" title="Editing result">
+</td>
+<td class="edit">
+    <img src="./assets/img/save-24.png" ng-click="saveEditedResult(result)" alt="Save" title="Save">
+</td>

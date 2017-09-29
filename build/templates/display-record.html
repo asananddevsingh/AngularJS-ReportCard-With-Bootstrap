@@ -1,0 +1,18 @@
+<td class='sno'>
+    {{result.id}}
+</td>
+<td class='avatar'>
+    <img src='./assets/img/avatar-48.png' alt='Avatar'>
+</td>
+<td class='name'>
+    <a href='javascript:void(0)'>{{result.name}}</a>
+</td>
+<td class='marks'>
+    {{result.marks}}
+</td>
+<td class='status'>
+    <img src='./assets/img/circle-{{ result.isPassed ? "green" : "red"}}.png' alt='Grade' title='{{ result.isPassed ? "Pass" : "Fail"}}'>
+</td>
+<td class='edit'>
+    <img src='./assets/img/edit-24.png' ng-click='editResult(result)' alt='Edit' title='Edit'>
+</td>

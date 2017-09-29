@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <title>Report Card | Global Logic</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <link rel="stylesheet" href="./assets/js/libs/bootstrap/bootstrap3.3.7.min.css">
+    <!--[if !IE]><!-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!--<![endif]-->
+    
+    <!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.static.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="assets/css/print.css" />
+	<![endif]-->
+    <!--[if gt IE 8]>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<![endif]-->
+
+    <!--<script src="assets/js/libs/modernizr-2.6.2.min.js"></script>-->
+
+    <script src="./assets/js/libs/angular.min.js"></script>
+    <script src="./assets/js/libs/jquery-2.2.3.min.js"></script>
+    <script src="./assets/js/libs/bootstrap/bootstrap3.3.7.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="main" class="row" ng-app="appReportCard" ng-controller="ctrlReportCard">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h1><strong>Report Card</strong></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Add new record</strong></div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div id="message" class="{{messageClass}}">
+                                        <strong>{{message}}</strong>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="title">Name:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" placeholder="Student's name" ng-model="name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="description">Marks:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="description" placeholder="Marks" ng-model="marks" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-success btn-block" ng-click="addNewResult(name, marks)">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <h2><u>Students Summary</u></h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                                <th>Marks</th>
+                                <th>Status</th>
+                                <th>Edit/Save</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="result in results" ng-include="getTemplate(result)"></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <h2><u>Marks Summary</u></h2>
+                <div class="row">
+                    <div class="col-sm-4 result-board">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading text-center">
+                                <h4><strong>Minimum</strong></h4>
+                            </div>
+                            <div class="panel-body text-center minimum">
+                                <h1>{{minimum}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 result-board">
+                        <div class="panel panel-info">
+                            <div class="panel-heading text-center">
+                                <h4><strong>Average</strong></h4>
+                            </div>
+                            <div class="panel-body text-center average">
+                                <h1>{{average}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 result-board">
+                        <div class="panel panel-success">
+                            <div class="panel-heading text-center">
+                                <h4><strong>Maximum</strong></h4>
+                            </div>
+                            <div class="panel-body text-center maximum">
+                                <h1>{{maximum}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container-fluid text-center">
+            <p><strong>Author:</strong> <a target="_blank" href="https://facebook.com/asananddevsingh">Anand Dev Singh</a> | <a href="mailto:ananddevsingh.aiet@gmail.com">Email</a> | <a target="_blank" href="https://github.com/asananddevsingh/AngularJS-ReportCard-With-Bootstrap">Source code</a></p>
+        </footer>
+    </div>
+
+    <script src="./assets/js/custom/script.js"></script>
+</body>
+
+</html>

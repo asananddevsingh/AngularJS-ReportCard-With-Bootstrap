@@ -1,0 +1,65 @@
+**** About Project: **** 
+
+This project is developed using AngularJS as MV* framework. index.html is the entry point for the project.
+It is using HTML templates (by using ng-include) to serve the result, So it needs a localhost (server) to serve the files.
+
+**** Steps to test the POC **** 
+
+If you have installed "Brackets" as an editor. (Brackets is an IDE which servers the files at localhost with some random ports.)
+
+Step A1: Download the project (zip folder) from https://github.com/asananddevsingh/AngularJS-ReportCard 
+Step A2: Extract it at your local machine.
+Step A3: Open the Project with Brackets editor and run "live preview" of 'index.html' file. (AngularJS-ReportCard/build/index.html).
+
+If you don't have Brackets, then you may configure the node server to serve the files from the local machine.
+
+Step B1: Download the project (zip folder) from https://github.com/asananddevsingh/AngularJS-ReportCard
+Step B2: Extract it at your local machine.
+Step B3: Open the command prompt (for Windows) and point it to the project location. 
+Step B4: Make sure Node JS in installed at your machine, if not then please install it from: https://nodejs.org/en/
+Step B5: After installation of NodeJS, Let's assume the project path is: "D:\GitHub\AngularJS-ReportCard\build*"
+Step B6: The easiest is to install http-server globally using node's package manager:
+
+npm install -g http-server
+
+Step B7: Then simply run http-server in any of your project directories:
+
+Eg. D:\my_project_path> http-server
+
+You will see output something like:
+
+Starting up http-server, serving ./
+Available on:  
+  http:192.168.0.7:8080
+  http:127.0.0.1:8080
+Hit CTRL-C to stop the server
+
+--- For Linux ---
+Just run python -m SimpleHTTPServer in your project directory, and you can load your page on http://localhost:8000
+
+Step B8: Not hit http://127.0.0.1:8080/ at the browser, or (http://127.0.0.1:8080/index.html) to run the project.
+
+**** Functionality **** 
+
+Project contains mainly 3 sections
+
+Section 1: Add new record 
+
+In this section, the user can enter the student's name and marks in the provided text box and hit Submit button to save the record.
+
+Section 2: Student summary:
+
+This section contains the result of all students. It is having result Id, Avatar, Name, Marks, Grade, Edit/Save columns.
+
+If a student is having marks less than 65, then it will show a red-circled image to highlight it as failed else it will show green for passed.
+
+Edit/Save column contains Pen icon, on click of that, it will allow the user to edit the record. After editing, there would be a save button icon to save the changes. Or after clicking out of the text boxes will also trigger the save.
+
+Section 3: Marks summary
+
+This section will contain the minimum, average and maximum of the marks.
+
+-- 
+
+Anand Dev Singh | Senior Software Engineer
+Ext - 2573 | M +91-95.996633.63
